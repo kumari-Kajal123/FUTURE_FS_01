@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import java from '../assets/javadeveloper.png'
 
 export default function Hero() {
   return (
@@ -19,32 +21,37 @@ export default function Hero() {
           </h2>
 
           <p className="mt-6 text-gray-400 max-w-lg">
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-           Nemo aut veritatis cum eligendi, minus illo dolores ipsum soluta ratione ullam exercitationem perferendis odit eveniet magnam quisquam, dolorem distinctio eius iusto?
+            Full Stack Developer skilled in MERN stack and Java, 
+            focused on building fast, scalable, and user-friendly web applications.
           </p>
 
           {/* BUTTONS */}
           <div className="mt-8 flex gap-4">
-            <button className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold">
-              View Projects
-            </button>
+            <Link to='/project' >
+              <button className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold">
+                View Projects
+              </button>
+            </Link>
 
-            <button className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold">
-              Contact Me
-            </button>
+            <Link to='/contact'>
+              <button className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold">
+                Contact Me
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* RIGHT CONTENT  */}
         <div className="flex justify-center">
           <img
-            src="https://via.placeholder.com/400"
-            alt="3D Work"
+            src={java}
+            alt="kajal"
             className="rounded-2xl shadow-lg"
           />
         </div>
 
       </div>
+
     </section>
 
    </>
