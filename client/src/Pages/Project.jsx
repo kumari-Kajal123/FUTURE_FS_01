@@ -16,9 +16,9 @@ export default function Project() {
     link: "#",
   },
   {
-    title: "3D Animation Project",
+    title: "Food Recipe",
     desc: "Creative motion graphics and animations made in Blender.",
-    tech: "Blender • Motion Graphics",
+    tech: "React • BootStrap • JavaScript • Authentication jwt",
     link: "#",
   },
 ];
@@ -66,10 +66,6 @@ export default function Project() {
             </a>
           </div>
         ))}
-        {/* <div className="flex gap-3">
-            <a href="#">Live</a>
-            <a href="#">GitHub</a>
-        </div> */}
       </div>
       
     </section>

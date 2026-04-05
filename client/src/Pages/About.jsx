@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import kajal from '../assets/kajal.jpeg'
 
 export default function About() {
   return (<>
@@ -35,11 +36,21 @@ export default function About() {
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center">
-          <img
-            src="https://via.placeholder.com/300"
-            alt="profile"
-            className="rounded-2xl shadow-lg"
-          />
+          <div className="relative w-75 h-75">
+
+            {/* Rotating Border */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 animate-spin-slow"></div>
+
+            {/* Inner Image */}
+            <div className="absolute inset-1 rounded-full bg-black flex items-center justify-center">
+              <img
+                src={kajal}
+                alt="profile"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+
+          </div>
         </div>
 
       </div>

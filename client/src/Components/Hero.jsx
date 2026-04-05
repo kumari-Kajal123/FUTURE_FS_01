@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import java from '../assets/javadeveloper.png'
+import kajal from '../assets/kajal.jpeg'
 
 export default function Hero() {
   return (
    <>
-
+   
     <section className="h-screen bg-black text-white flex items-center justify-center px-6">
       
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
@@ -16,7 +16,7 @@ export default function Hero() {
             Hi, I'm <span className="text-blue-400">Kajal</span>👋
           </h1>
 
-          <h2 className="text-2xl md:text-3xl mt-4 text-gray-300">
+          <h2 className="text-2xl md:text-3xl mt-4 text-gray-300 font-bold">
             Full Stack Developer | JAVA
           </h2>
 
@@ -44,9 +44,9 @@ export default function Hero() {
         {/* RIGHT CONTENT  */}
         <div className="flex justify-center">
           <img
-            src={java}
+            src={kajal}
             alt="kajal"
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl shadow-lg w-80 h-80 rounded-full object-cover blur-sm opacity-80"
           />
         </div>
 

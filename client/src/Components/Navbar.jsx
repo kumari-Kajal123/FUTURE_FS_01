@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +14,23 @@ export default function Navbar() {
         </h1>
 
         {/*MENU SAME FOR BOTH */}
-        <ul
-          className={`absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent flex flex-col md:flex-row items-center gap-6 md:gap-8  py-4 md:py-0 transition-all duration-300 ${isOpen ? "block" : "hidden"} md:flex `} >
-          <Link to='/'  ><li className="hover:text-blue-400 cursor-pointer">Home</li></Link>
-          <Link to='/about'><li className="hover:text-blue-400 cursor-pointer">About</li></Link>
-          <Link to='/project'><li className="hover:text-blue-400 cursor-pointer">Projects</li></Link>
-          <Link to='/contact'><li className="hover:text-blue-400 cursor-pointer">Contact</li></Link>
+        <ul className="flex gap-6">
+          <li>
+            <NavLink to="/"  className={({ isActive }) => isActive ? "text-purple-500 font-bold" : "text-white" }>Home </NavLink>
+          </li>
+
+          <li>
+            <NavLink  to="/about"  className={({ isActive }) =>  isActive ? "text-purple-500 font-bold" : "text-white"}>About </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/project"  className={({ isActive }) =>  isActive ? "text-purple-500 font-bold" : "text-white"}> Projects</NavLink>
+          </li>
+
+
+          <li>
+            <NavLink  to="/contact"  className={({ isActive }) =>  isActive ? "text-purple-500 font-bold" : "text-white" } > Contact </NavLink>
+          </li>
         </ul>
 
         {/* ICON FOR SMALL SCREEN */}
