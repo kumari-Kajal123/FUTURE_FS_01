@@ -34,12 +34,7 @@ export default function Navbar() {
         </ul>
 
         {/* ICON FOR SMALL SCREEN */}
-        <div
-          className="md:hidden text-2xl cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          ☰
-        </div>
+        <div  className="md:hidden text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)} >  ☰ </div>
       </div>
     </nav>
     </>

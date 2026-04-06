@@ -14,11 +14,6 @@ export default function About() {
             About Me
           </h2>
 
-          {/* <p className="text-gray-300 leading-relaxed mb-4">
-            Along with web development, I have a solid foundation in Java and enjoy solving problems through clean and optimized code. 
-            I am always eager to learn new technologies and improve my skills to stay updated in the fast-growing tech world.
-          </p> */}
-
           <p className="text-gray-300 leading-relaxed mb-4">
             My projects reflect my skills in full stack development and my ability to build real-world applications. 
             I have worked on projects using the MERN stack, where I developed responsive user interfaces and efficient backend systems. 
@@ -38,16 +33,12 @@ export default function About() {
         <div className="flex justify-center">
           <div className="relative w-75 h-75">
 
-            {/* Rotating Border */}
+            {/* ROTATING BORDER */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 animate-spin-slow"></div>
 
-            {/* Inner Image */}
+            {/* INNER IMAGE */}
             <div className="absolute inset-1 rounded-full bg-black flex items-center justify-center">
-              <img
-                src={kajal}
-                alt="profile"
-                className="w-full h-full rounded-full object-cover"
-              />
+              <img  src={kajal} alt="profile" className="w-full h-full rounded-full object-cover" />
             </div>
 
           </div>
@@ -55,11 +46,9 @@ export default function About() {
 
       </div>
 
-             {/* SKILLS SECTION */}
+        {/* SKILLS SECTION */}
         <div className="mt-16">
-        <h3 className="text-3xl font-bold mb-10 text-white text-center">
-            My Skills
-        </h3>
+        <h3 className="text-3xl font-bold mb-10 text-white text-center">  My Skills </h3>
 
         <div className="grid md:grid-cols-3 gap-8">
 

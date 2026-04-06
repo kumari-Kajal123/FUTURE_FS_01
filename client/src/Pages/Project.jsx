@@ -33,16 +33,13 @@ export default function Project() {
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="group p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:scale-105 hover:shadow-purple-500/30 transition-all duration-300"
-          >
-            {/* Image */}
+          <div key={index} className="group p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:scale-105 hover:shadow-purple-500/30 transition-all duration-300" >
+            {/* IMAGE */}
             <div className="h-40 bg-gray-800 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-gray-500">Project Image</span>
             </div>
 
-            {/* Content */}
+            {/* CONTENT */}
             <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition">
               {project.title}
             </h3>
@@ -55,14 +52,9 @@ export default function Project() {
               {project.tech}
             </p>
 
-            {/* Button */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-purple-500 rounded-lg text-sm hover:bg-purple-600 transition"
-            >
-              View Project
+            {/* BUTTON*/}
+            <a  href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-purple-500 rounded-lg text-sm hover:bg-purple-600 transition" >
+               View Project
             </a>
           </div>
         ))}
