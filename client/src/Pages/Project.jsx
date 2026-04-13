@@ -1,25 +1,31 @@
 import React from 'react'
+import quiz from '../assets/quiz.png'
+import form from '../assets/form.png'
+import foodrecipe from '../assets/foodrecipe.png'
 
 export default function Project() {
 
     const projects = [
   {
-    title: "Portfolio Website",
-    desc: "A modern personal portfolio built with React and Tailwind CSS.",
-    tech: "React • Tailwind • JavaScript",
-    link: "#",
+    title: "Quiz Question",
+    desc: "A modern Quiz Question built with React and BootStrap CSS.",
+    tech: "React • BootStrap • JavaScript",
+    link: "https://github.com/kumari-Kajal123/Quiz-question.git",
+    image:quiz
   },
   {
-    title: "MERN Chat App",
-    desc: "Real-time chat application using Socket.io and MERN stack.",
+    title: "Form Data",
+    desc: "Real-time form application using MERN stack.",
     tech: "MongoDB • Express • React • Node • Socket.io",
-    link: "#",
+    link: "https://github.com/kumari-Kajal123/form-data.git",
+    image:form
   },
   {
     title: "Food Recipe",
     desc: "Creative motion graphics and animations made in Blender.",
     tech: "React • BootStrap • JavaScript • Authentication jwt",
-    link: "#",
+    link: "https://github.com/kumari-Kajal123/food-recipe.git",
+    image:foodrecipe
   },
 ];
 
@@ -36,7 +42,7 @@ export default function Project() {
           <div key={index} className="group p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:scale-105 hover:shadow-purple-500/30 transition-all duration-300" >
             {/* IMAGE */}
             <div className="h-40 bg-gray-800 rounded-lg mb-4 flex items-center justify-center">
-              <span className="text-gray-500">Project Image</span>
+              <span className="text-gray-500"><img src={project.image} alt="" className='h-40 w-full' /></span>
             </div>
 
             {/* CONTENT */}
