@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const leadRoute = require('./App/Route/leadRoute')
+
 const app = express();
 
 // middleware
@@ -16,6 +18,8 @@ mongoose.connect(process.env.DBURL).then(()=>{
 }).catch((err)=>{
     console.log("database error" , err)
 })
+
+app.use('/lead' , leadRoute )
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);

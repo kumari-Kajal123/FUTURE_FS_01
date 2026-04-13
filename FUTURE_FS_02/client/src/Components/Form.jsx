@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 
 export default function Form() {
   const {
@@ -9,8 +10,16 @@ export default function Form() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("Form Data:", data);
+    e.preventDefault()
+    await axios.post("http://localhost:5000/lead" , {
+          name,
+          email,
+          phone,
+          message
+    })
+
     reset()
   };
 
