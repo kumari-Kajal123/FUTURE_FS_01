@@ -1,8 +1,9 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from 'axios'
 
 export default function Form() {
+
   const {
     register,
     handleSubmit,
@@ -12,15 +13,14 @@ export default function Form() {
 
   const onSubmit = async (data) => {
     console.log("Form Data:", data);
-    e.preventDefault()
-    await axios.post("http://localhost:5000/lead" , {
-          name,
-          email,
-          phone,
-          message
-    })
-
-    reset()
+    // data.preventDefault()
+    try{
+      await axios.post("http://localhost:5000/lead", data);
+      console.log(data)
+    }catch(err){
+       console.log(err.response?.data);
+    }
+     reset()
   };
 
   return (
@@ -39,7 +39,7 @@ export default function Form() {
           <div>
             <label className="block text-gray-700">First Name</label>
             <input
-              {...register("firstName", { required: true })}
+              {...register("name", { required: true })}
               className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-400"
               placeholder="Enter first name"
             />
@@ -49,7 +49,7 @@ export default function Form() {
           </div>
 
           {/* Last Name */}
-          <div>
+          {/* <div>
             <label className="block text-gray-700">Last Name</label>
             <input
               {...register("lastName", { required: true })}
@@ -59,7 +59,7 @@ export default function Form() {
             {errors.lastName && (
               <p className="text-red-500 text-sm">Last name is required</p>
             )}
-          </div>
+          </div> */}
 
           {/* Email */}
           <div>

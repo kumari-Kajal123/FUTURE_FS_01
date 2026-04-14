@@ -1,22 +1,29 @@
-import React from 'react'
-import { useState } from 'react';
-import axios from "axios";
+import axios from 'axios';
+import React, {  useEffect, useState } from 'react'
 
 export default function DashBoard() {
-  const [leads, setLeads] = useState([]);
 
-  useEffect(() => {
-  const fetchLeads = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/lead");
-      setLeads(res.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const [leads , setLeads] = useState([])
+
+  const fetchLeads = async ()=>{
+    const res = await axios.get("http://localhost:5000/lead")
+    setLeads(res.data)
+    console.log(res.data)
+  }
+  useEffect(()=>{
+    fetchLeads()
+  },[])
+
+  const updateStatus = async (id, status) => {
+    await axios.put(`http://localhost:5000/lead/${id}`, { status });
+    fetchLeads();
   };
 
-  fetchLeads();
-}, []);
+  const deleteLead = async (id) => {
+    await axios.delete(`http://localhost:5000/lead/${id}`);
+    fetchLeads();
+  };
+  
 
   return (<>
 {leads.map((lead) => (
@@ -51,8 +58,49 @@ export default function DashBoard() {
       </span>
     </div>
 
+{/* {lead.status === "Contacted" ? (
+  <button className="bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed">
+    Contacted
+  </button>
+) : (
+  <button
+    onClick={() => updateStatus(lead._id, "Contacted")}
+    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+  >
+    Contacted
+  </button>
+)}
+
+          <button onClick={()=>deleteLead(lead._id)}>
+            Delete
+          </button> */}
+          <div className="flex gap-3 mt-3">
+
+            {lead.status === "Contacted" ? (
+              <button className="bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed">
+                ✓ Contacted
+              </button>
+            ) : (
+              <button
+                onClick={() => updateStatus(lead._id, "Contacted")}
+                className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                ✓ Contacted
+              </button>
+            )}
+
+            <button
+              onClick={() => deleteLead(lead._id)}
+              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+            >
+              🗑 Delete
+            </button>
+
+          </div>
+
   </div>
 ))}
+
     {/* <div>
       <h1>Leads</h1>
       {leads.map((lead) => (

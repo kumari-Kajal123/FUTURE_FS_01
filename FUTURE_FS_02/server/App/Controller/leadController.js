@@ -4,6 +4,7 @@ const Lead = require("../Model/leadModel.model")
 const createLead = async (req,res)=>{
 try{
     const lead = await Lead.create(req.body)
+    
     res.status(201).json(lead);
 }catch(err){
     res.status(500).json({ err: err.message });
